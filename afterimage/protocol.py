@@ -38,12 +38,10 @@ import time
 import zlib
 from typing import Optional
 
-import cv2
 import numpy as np
 
 from .crypto import CryptoLayer, DecryptionError
 from .fountain import LTDecoder, LTEncoder
-from .optical import QRGenerator, QRScanner, TARGET_FPS
 
 __all__ = ["AfterImage"]
 
@@ -84,7 +82,7 @@ class AfterImage:
         if not password:
             raise ValueError("password must not be empty")
         self._password = password
-        self._qr = QRGenerator()
+        self._qr = None  # lazy-initialised on first tx() call
 
     # ------------------------------------------------------------------
     # Internal helpers
@@ -125,6 +123,7 @@ class AfterImage:
 
         A fresh copy is returned; *base* is never mutated.
         """
+        import cv2  # lazy — not needed until display is active
         img = base.copy()
         y = 30
         for line in text_lines:
@@ -203,6 +202,10 @@ class AfterImage:
         )
 
         # ── Display ───────────────────────────────────────────────────
+        import cv2  # lazy — only needed when actually transmitting
+        from .optical import QRGenerator, TARGET_FPS  # lazy
+        if self._qr is None:
+            self._qr = QRGenerator()
         print(f"\n[*] Streaming at {TARGET_FPS} FPS  |  press 'q' to stop\n")
         cv2.namedWindow("AFTERIMAGE TX", cv2.WINDOW_NORMAL)
         cv2.setWindowProperty(
@@ -276,6 +279,8 @@ class AfterImage:
         print("  AFTERIMAGE  ◀  RECEIVER")
         print(f"{_bar}\n")
 
+        import cv2  # lazy — only needed when actually receiving
+        from .optical import QRScanner  # lazy
         scanner = QRScanner(camera_idx)
         decoder = LTDecoder()
 
