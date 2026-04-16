@@ -1,0 +1,34 @@
+AFTERIMAGE
+Copyright (C) 2024  AFTERIMAGE Contributors
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+-------------------------------------------------------------------------------
+COMMERCIAL LICENSE
+
+If you intend to use AFTERIMAGE in a commercial product or service,
+or in any context where the AGPL-3.0 terms are incompatible with your
+requirements, a separate commercial license is available.
+
+Contact: nzengi@proton.me
+Subject: Commercial License Inquiry
+
+Commercial licensees receive:
+  - Permission to use AFTERIMAGE in closed-source or proprietary products
+  - Priority security patches and vulnerability notifications
+  - Direct engineering support (response SLA negotiable)
+  - Compliance review assistance
+
+Individual researchers, security professionals, journalists, and
+open-source projects may use AFTERIMAGE under the AGPL-3.0 at no charge.
