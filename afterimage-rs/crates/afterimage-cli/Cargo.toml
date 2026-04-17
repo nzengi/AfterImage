@@ -14,12 +14,17 @@ path = "src/main.rs"
 [dependencies]
 afterimage-core    = { workspace = true }
 afterimage-optical = { workspace = true }
+afterimage-solana  = { workspace = true, optional = true }
 
 clap      = { workspace = true }
 rpassword = { workspace = true }
 indicatif = { workspace = true }
+serde_json  = { workspace = true, optional = true }
+bincode     = { workspace = true, optional = true }
+solana-sdk  = { workspace = true, optional = true }
 
 [features]
 default = ["display", "camera"]
 display = ["afterimage-optical/display"]
 camera  = ["afterimage-optical/camera"]
+solana  = ["dep:afterimage-solana", "dep:serde_json", "dep:bincode", "dep:solana-sdk"]

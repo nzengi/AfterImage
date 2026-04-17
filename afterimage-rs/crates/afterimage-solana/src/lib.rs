@@ -25,11 +25,17 @@
 #![warn(missing_docs, clippy::all)]
 
 pub mod error;
+pub mod multisig_request;
+pub mod multisig_response;
+pub mod multisigner;
 pub mod request;
 pub mod response;
 pub mod signer;
 
 pub use error::AirSignError;
+pub use multisig_request::{MultiSignRequest, PartialSig};
+pub use multisig_response::MultiSignResponse;
+pub use multisigner::{advance_round_from, build_multisig_session, MultiSigner};
 pub use request::SignRequest;
 pub use response::SignResponse;
 pub use signer::AirSigner;

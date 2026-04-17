@@ -40,9 +40,13 @@ version = "2.0.0"
 dependencies = [
  "afterimage-core",
  "afterimage-optical",
+ "afterimage-solana",
+ "bincode",
  "clap",
  "indicatif",
  "rpassword",
+ "serde_json",
+ "solana-sdk",
 ]
 
 [[package]]

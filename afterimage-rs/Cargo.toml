@@ -76,6 +76,7 @@ hex     = "0.4"
 # ── Internal crates ──────────────────────────────────────────────────────────
 afterimage-core    = { path = "crates/afterimage-core" }
 afterimage-optical = { path = "crates/afterimage-optical" }
+afterimage-solana  = { path = "crates/afterimage-solana" }
 
 [profile.release]
 opt-level     = 3
